@@ -142,6 +142,7 @@
                 app:layout_constraintTop_toBottomOf="@id/ingredientesText" />
 
 
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.core.widget.NestedScrollView>

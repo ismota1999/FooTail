@@ -47,6 +47,8 @@ class DrinkDetails : AppCompatActivity() {
         favoriteClick()
     }
 
+
+
     private fun favoriteClick() {
         binding.btnSave.setOnClickListener {
             drinkSaved?.let {

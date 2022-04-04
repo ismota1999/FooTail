@@ -21,12 +21,18 @@ class Menu : AppCompatActivity() {
 
         animateIcons()
         goToCocktails()
-        //goToFood()
+        goToFood()
 
 
     }
 
     private fun goToFood() {
+
+        binding.burguerIcon.setOnClickListener {
+            val intent = Intent(this, FoodActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
 
     }
 

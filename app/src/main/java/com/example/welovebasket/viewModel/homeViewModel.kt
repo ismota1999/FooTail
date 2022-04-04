@@ -4,14 +4,10 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
 import com.example.welovebasket.classes.Drink
 import com.example.welovebasket.classes.DrinksList
 import com.example.welovebasket.retrofit.RetrofitInstance
 import com.example.welovebasket.roomDB.drinkDB
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -37,25 +33,6 @@ class homeViewModel(
                 Log.d("HomeFragment", t.message.toString())
             }
         })
-    }
-
-    fun deleteMeal(drink:Drink){
-        viewModelScope.launch {
-            drinkDatabase.drinkDAO().deleteDrink(drink)
-        }
-    }
-
-    fun getAllSavedMeals() {
-        viewModelScope.launch(Dispatchers.Main) {
-        }
-    }
-
-    fun insertMeal(drink:Drink){
-        viewModelScope.launch(Dispatchers.IO) {
-            drinkDatabase.drinkDAO().insertAndUpdate(drink)
-            withContext(Dispatchers.Main){
-            }
-        }
     }
 
     fun observeRandomDrinkLiveData():LiveData<Drink> {
