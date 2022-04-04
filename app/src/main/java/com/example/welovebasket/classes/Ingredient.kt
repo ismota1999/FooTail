@@ -3,7 +3,4 @@ package com.example.welovebasket.classes
 
 import com.google.gson.annotations.SerializedName
 
-data class DrinksList(
-    val drinks: List<Drink>
-
-)
+data class Ingredient(val ingredient: String, val measure: String?)

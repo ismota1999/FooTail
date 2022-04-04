@@ -9,7 +9,7 @@ object RetrofitInstance {
 
     val api:drinksApiInterface by lazy {
         Retrofit.Builder()
-            .baseUrl("https://www.thecocktaildb.com/api/json/v1/1/")
+            .baseUrl("https://www.thecocktaildb.com/api/json/v2/9973533/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(drinksApiInterface::class.java)

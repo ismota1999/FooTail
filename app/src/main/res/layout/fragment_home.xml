@@ -10,136 +10,104 @@
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fillViewport="true">
+        android:fillViewport="true"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-42dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
 
+            <LinearLayout
+                android:id="@+id/linear_head"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_30sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
 
-    <LinearLayout
-        android:id="@+id/linear_head"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_30sdp"
-        android:layout_marginTop="@dimen/_10sdp"
-        android:layout_marginEnd="@dimen/_20sdp"
-        android:orientation="horizontal"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+                <TextView
+                    android:id="@+id/txt_header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:fontFamily="@font/myfont"
+                    android:text="Cocktail Generator"
+                    android:textColor="@color/purple_500"
+                    android:textSize="@dimen/_25ssp"
+                    android:textStyle="bold" />
 
+            </LinearLayout>
 
-        <TextView
-            android:id="@+id/txt_header"
-            android:layout_width="wrap_content"
-            android:layout_weight="3"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/myfont"
-            android:text="Home"
-            android:textColor="@color/purple_500"
-            android:textSize="@dimen/_25ssp"
-            android:textStyle="bold"/>
-
-        <ImageView
-            android:id="@+id/img_search"
-            android:layout_width="@dimen/_30sdp"
-            android:layout_height="match_parent"
-            android:scaleType="centerCrop"
-            android:src="@drawable/ic_search">
-            
-        </ImageView>
-
-    </LinearLayout>
-    
-    
-    <TextView
-        android:id="@+id/what_cocktail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_10ssp"
-        android:fontFamily="@font/myfont"
-        android:text="Wich cocktails would you like to see?"
-        android:textColor="@color/black"
-        android:textSize="@dimen/_12sdp"
-        android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/linear_head"
-        app:layout_constraintStart_toStartOf="@id/linear_head"/>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/random_cocktail"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/_190sdp"
-        android:layout_marginStart="@dimen/_25sdp"
-        android:layout_marginEnd="@dimen/_25sdp"
-        android:layout_marginTop="@dimen/_10sdp"
-        app:cardCornerRadius="@dimen/_10sdp"
-        app:cardUseCompatPadding="true"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/what_cocktail">
-
-        <ImageView
-            android:id="@+id/img_random_cocktail"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/purple_500"
-            android:scaleType="centerCrop"/>
-    </androidx.cardview.widget.CardView>
-
-    <TextView
-        android:id="@+id/popular_cocktails"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_18ssp"
-        android:fontFamily="@font/myfont"
-        android:text="Popular Cocktails"
-        android:textColor="@color/black"
-        android:textSize="@dimen/_17ssp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@id/random_cocktail"
-        app:layout_constraintTop_toBottomOf="@id/random_cocktail"/>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view_cocktails"
-        android:layout_width="wrap_content"
-        android:layout_height="@dimen/_90sdp"
-        android:layout_marginStart="@dimen/_25sdp"
-        android:layout_marginEnd="@dimen/_10sdp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/popular_cocktails"/>
 
             <TextView
-                android:id="@+id/categories"
+                android:id="@+id/what_cocktail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="132dp"
+                android:layout_marginTop="@dimen/_10ssp"
                 android:fontFamily="@font/myfont"
-                android:text="Categories"
+                android:text="Welcome!"
                 android:textColor="@color/black"
-                android:textSize="@dimen/_17ssp"
+                android:textSize="@dimen/_12sdp"
                 android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="@id/popular_cocktails"
-                app:layout_constraintTop_toBottomOf="@id/popular_cocktails" />
+                app:layout_constraintStart_toStartOf="@id/linear_head"
+                app:layout_constraintTop_toBottomOf="@id/linear_head" />
 
             <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_25sdp"
-        android:layout_marginEnd="@dimen/_25sdp"
-        app:cardCornerRadius="@dimen/_10sdp"
-        app:cardUseCompatPadding="true"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/categories">
-        
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler_categories"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scrollbars="none"/>
-        
-    </androidx.cardview.widget.CardView>
+                android:id="@+id/random_cocktail"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_190sdp"
+                android:layout_marginStart="@dimen/_25sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_25sdp"
+                app:cardCornerRadius="@dimen/_10sdp"
+                app:cardUseCompatPadding="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/what_cocktail">
+
+                <ImageView
+                    android:id="@+id/img_random_cocktail"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/purple_500"
+                    android:scaleType="centerCrop" />
+
+            </androidx.cardview.widget.CardView>
+
+
+            <TextView
+                android:id="@+id/drinkName"
+                android:layout_width="143dp"
+                android:layout_height="38dp"
+                android:gravity="center_horizontal|center_vertical"
+                android:text=""
+                android:textStyle="bold"
+                android:fontFamily="@font/myfont"
+                android:textSize="@dimen/_8ssp"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.539" />
+
+            <Button
+                android:id="@+id/generateDrink"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Generate"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.941" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>

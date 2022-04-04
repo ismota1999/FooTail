@@ -42,7 +42,8 @@
     <androidx.core.widget.NestedScrollView
         android:layout_width="@dimen/_314sdp"
         android:layout_height="667dp"
-        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+        android:fillViewport="true">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -106,18 +107,40 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_2sdp"
+                android:layout_marginLeft="-2sp"
+                android:textSize="@dimen/_10sdp"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toStartOf="@id/howTo_text"
                 app:layout_constraintTop_toBottomOf="@id/howTo_text" />
 
+
             <TextView
-                android:id="@+id/drinkIngredients"
+                android:id="@+id/ingredientesText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_2sdp"
+                android:layout_marginStart="@dimen/_1ssp"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/myfont"
+                android:text="- Ingredients:"
                 android:textColor="@color/black"
+                android:textSize="@dimen/_15ssp"
+                android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="@id/instructions"
                 app:layout_constraintTop_toBottomOf="@id/instructions" />
+
+            <ListView
+                android:id="@+id/listView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/myfont"
+                android:layout_marginLeft="-10sp"
+                android:layout_marginTop="3sp"
+                android:textSize="@dimen/_15ssp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="@id/ingredientesText"
+                app:layout_constraintTop_toBottomOf="@id/ingredientesText" />
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -129,15 +152,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|center_horizontal"
         android:layout_marginBottom="5dp"
-        android:orientation="horizontal">
-
-        <ImageView
-            android:id="@+id/img_youtube"
-            android:layout_width="50dp"
-            android:layout_height="40dp"
-            android:layout_gravity="center_horizontal"
-            android:src="@drawable/ic_video" />
-    </LinearLayout>
+        android:orientation="horizontal"/>
 
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton

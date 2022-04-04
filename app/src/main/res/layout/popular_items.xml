@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/_180sdp"
+    android:layout_height="@dimen/_90sdp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="@dimen/_10ssp"
+    android:elevation="@dimen/_3sdp"
+    app:cardUseCompatPadding="true">
+
+
+    <ImageView
+        android:id="@+id/img_popular_drink_item"
+        android:layout_width="200dp"
+        android:layout_height="120dp"
+        android:scaleType="centerCrop"/>
+
+</androidx.cardview.widget.CardView>

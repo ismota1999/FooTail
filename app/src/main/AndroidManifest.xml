@@ -13,17 +13,23 @@
         android:theme="@style/Theme.WeLoveBasket"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".activities.SplashScreen"
+            android:exported="true">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.Menu"
+            android:exported="false" />
+        <activity
             android:name=".activities.DrinkDetails"
             android:exported="false" />
         <activity
             android:name=".activities.MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="false"/>
     </application>
 
 </manifest>

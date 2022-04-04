@@ -2,25 +2,21 @@ package com.example.welovebasket.fragments
 
 
 import android.content.Intent
+import android.content.Intent.getIntent
+import android.content.Intent.getIntentOld
 import android.os.Bundle
-import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.Observer
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
-import com.example.welovebasket.R
 import com.example.welovebasket.activities.DrinkDetails
+import com.example.welovebasket.activities.MainActivity
 import com.example.welovebasket.classes.Drink
-import com.example.welovebasket.classes.DrinksList
 import com.example.welovebasket.databinding.FragmentHomeBinding
-import com.example.welovebasket.retrofit.RetrofitInstance
 import com.example.welovebasket.viewModel.homeViewModel
-import retrofit2.Call
-import retrofit2.Response
-import javax.security.auth.callback.Callback
+
 
 class HomeFragment : Fragment() {
     private lateinit var binding:FragmentHomeBinding
@@ -35,7 +31,7 @@ class HomeFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        homeMVVM = ViewModelProvider(this)[homeViewModel::class.java]
+        homeMVVM = (activity as MainActivity).viewModel
     }
 
     override fun onCreateView(
@@ -49,11 +45,14 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        homeMVVM.getRandomDrink()
-        observerRandomDrink()
-        randomDrinkClicked()
 
 
+        binding.generateDrink.setOnClickListener {
+            homeMVVM.getRandomDrink()
+            observerRandomDrink()
+            randomDrinkClicked()
+
+        }
 
     }
 
@@ -73,9 +72,10 @@ class HomeFragment : Fragment() {
             Glide.with(this@HomeFragment)
                 .load(t!!.strDrinkThumb)
                 .into(binding.imgRandomCocktail)
+            binding.drinkName.text = "You got : ${t!!.strDrink}"
 
             this.randomDrink = t
         }
     }
-
 }
+

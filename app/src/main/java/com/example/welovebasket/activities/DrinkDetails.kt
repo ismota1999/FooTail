@@ -1,15 +1,19 @@
 package com.example.welovebasket.activities
 
-import android.content.Intent
-import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.ArrayAdapter
+import android.widget.ListView
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.example.welovebasket.R
+import com.example.welovebasket.classes.Drink
 import com.example.welovebasket.databinding.ActivityDrinkDetailsBinding
 import com.example.welovebasket.fragments.HomeFragment
+import com.example.welovebasket.roomDB.drinkDB
+import com.example.welovebasket.viewModel.DrinkVMFactory
 import com.example.welovebasket.viewModel.DrinkViewModel
 
 class DrinkDetails : AppCompatActivity() {
@@ -18,14 +22,17 @@ class DrinkDetails : AppCompatActivity() {
     private lateinit var drinkImg:String
     private lateinit var binding: ActivityDrinkDetailsBinding
     private lateinit var drinkMVVM: DrinkViewModel
-    private lateinit var youtubeLink : String
+    private lateinit var listView : ListView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityDrinkDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        drinkMVVM = ViewModelProvider(this)[DrinkViewModel::class.java]
+        val drinkDatabase = drinkDB.getInstance(this)
+        val viewModelFactory = DrinkVMFactory(drinkDatabase)
+
+        drinkMVVM = ViewModelProvider(this, viewModelFactory)[DrinkViewModel::class.java]
 
         getDrinkInfoFromIntent()
 
@@ -37,37 +44,42 @@ class DrinkDetails : AppCompatActivity() {
         drinkMVVM.getDrinkDetail(drinkId)
 
         drinkDetailsLiveDataObserver()
-
-        onVideoClick()
+        favoriteClick()
     }
 
-    private fun onVideoClick() {
-        binding.imgYoutube.setOnClickListener {
-            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(youtubeLink))
-            if(youtubeLink.isEmpty()) {
-                binding.imgYoutube.visibility = View.INVISIBLE
-            }
-            else{
-                startActivity(intent)
+    private fun favoriteClick() {
+        binding.btnSave.setOnClickListener {
+            drinkSaved?.let {
+                drinkMVVM.insertDrink(it)
+                Toast.makeText(this, "Drink Saved!", Toast.LENGTH_SHORT).show()
             }
         }
     }
 
+    private var drinkSaved : Drink? = null
     private fun drinkDetailsLiveDataObserver() {
         drinkMVVM.observerDrinkLiveData().observe(this
         ) { t ->
             onLoaded()
             val drink = t
+            drinkSaved = drink
 
             binding.category.text = "Category : ${drink!!.strCategory}"
             binding.glassType.text = "Glass : ${drink!!.strGlass}"
             binding.instructions.text = drink.strInstructions
-            binding.drinkIngredients.text = drink.strIngredient1
-            binding.drinkIngredients.text = drink.strIngredient2
 
+            val ingredient = drink.getIngredients()
 
+            listView = findViewById<ListView>(R.id.listView)
+            val listItems = arrayOfNulls<String>(ingredient.size)
 
-            youtubeLink = drink?.strVideo
+            for (i in 0 until ingredient.size) {
+                val recipe = ingredient[i]
+                listItems[i] = "-" + recipe.ingredient + " -> " +  recipe.measure
+            }
+
+            val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, listItems)
+            listView.adapter = adapter
 
         }
     }
@@ -96,7 +108,7 @@ class DrinkDetails : AppCompatActivity() {
         binding.instructions.visibility = View.INVISIBLE
         binding.category.visibility = View.INVISIBLE
         binding.glassType.visibility = View.INVISIBLE
-        binding.imgYoutube.visibility = View.INVISIBLE
+
 
 
     }
@@ -107,7 +119,7 @@ class DrinkDetails : AppCompatActivity() {
         binding.instructions.visibility = View.VISIBLE
         binding.category.visibility = View.VISIBLE
         binding.glassType.visibility = View.VISIBLE
-        binding.imgYoutube.visibility = View.VISIBLE
+
 
     }
 }
