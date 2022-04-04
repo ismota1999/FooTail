@@ -54,7 +54,7 @@ class FavoritesFragment : Fragment() {
     }
 
     private fun favDrinkClicked(){
-        favDrinksAdapter.setOnFavoriteMealClickListener(object : FavDrinksAdapter.OnFavoriteClickListener{
+        favDrinksAdapter.setOnFavoriteDrinkListener(object : FavDrinksAdapter.OnFavoriteClickListener{
             override fun onFavoriteClick(drink: Drink) {
                 val intent = Intent(activity, DrinkDetails::class.java)
                 intent.putExtra(DRINK_ID,drink.idDrink)

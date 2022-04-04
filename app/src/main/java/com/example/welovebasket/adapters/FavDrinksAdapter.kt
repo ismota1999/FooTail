@@ -37,7 +37,7 @@ class FavDrinksAdapter : RecyclerView.Adapter<FavDrinksAdapter.FavDrinksAdapterV
         return differ.currentList[position]
     }
 
-    fun setOnFavoriteMealClickListener(onFavoriteClickListener: OnFavoriteClickListener) {
+    fun setOnFavoriteDrinkListener(onFavoriteClickListener: OnFavoriteClickListener) {
         this.onFavoriteClickListener = onFavoriteClickListener
     }
 
