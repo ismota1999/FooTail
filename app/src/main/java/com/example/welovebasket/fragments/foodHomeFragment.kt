@@ -10,6 +10,8 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import com.bumptech.glide.Glide
+import com.example.welovebasket.activities.FoodActivity
+import com.example.welovebasket.activities.FoodDetails
 import com.example.welovebasket.activities.MainActivity
 import com.example.welovebasket.classes.Meal
 import com.example.welovebasket.databinding.FragmentFoodHomeBinding
@@ -23,14 +25,14 @@ class foodHomeFragment : Fragment() {
     private lateinit var randomMeal: Meal
 
     companion object{
-        const val DRINK_ID = "com.example.welovebasket.fragments.idDrink"
-        const val DRINK_NAME = "com.example.welovebasket.fragments.nameDrink"
-        const val DRINK_THUMB = "com.example.welovebasket.fragments.thumbDrink"
+        const val MEAL_ID = "com.example.welovebasket.fragments.idMeal"
+        const val MEAL_NAME = "com.example.welovebasket.fragments.nameMeal"
+        const val MEAL_THUMB = "com.example.welovebasket.fragments.thumbMeal"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        foodHomeMVVM = ViewModelProvider(this)[homeFoodViewModel::class.java]
+        foodHomeMVVM = (activity as FoodActivity).viewModel
     }
 
     override fun onCreateView(
@@ -49,20 +51,20 @@ class foodHomeFragment : Fragment() {
         binding.generateDrink.setOnClickListener {
             foodHomeMVVM.getRandomMeal()
             observerRandomMeal()
-            //randomDrinkClicked()
+            randomMealClicked()
         }
 
     }
 
-    /*private fun randomDrinkClicked() {
+    private fun randomMealClicked() {
         binding.randomCocktail.setOnClickListener {
-            val intent = Intent(activity, DrinkDetails::class.java)
-            intent.putExtra(DRINK_ID, randomDrink.idDrink)
-            intent.putExtra(DRINK_NAME, randomDrink.strDrink)
-            intent.putExtra(DRINK_THUMB, randomDrink.strDrinkThumb)
+            val intent = Intent(activity, FoodDetails::class.java)
+            intent.putExtra(MEAL_ID, randomMeal.idMeal)
+            intent.putExtra(MEAL_NAME, randomMeal.strMeal)
+            intent.putExtra(MEAL_THUMB, randomMeal.strMealThumb)
             startActivity(intent)
         }
-    }*/
+    }
 
     private fun observerRandomMeal() {
         foodHomeMVVM.observeRandomMealLiveData().observe(viewLifecycleOwner

@@ -10,4 +10,9 @@
         android:icon="@drawable/ic_baseline_favorite_border_24"
         android:id="@+id/favoriteFoodFragment"
         />
+
+    <item android:title="Search"
+        android:icon="@drawable/ic_baseline_search_24"
+        android:id="@+id/searchMainIngredient"
+        />
 </menu>

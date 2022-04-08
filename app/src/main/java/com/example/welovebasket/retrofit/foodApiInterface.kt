@@ -14,6 +14,9 @@ interface foodApiInterface {
     @GET("lookup.php?")
     fun getMealDetails(@Query("i")id:String): Call<MealList>
 
+    @GET("search.php?")
+    fun getMealByName(@Query("s") s:String):Call<MealList>
+
 
 
 }

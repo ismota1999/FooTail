@@ -14,4 +14,9 @@
         android:name="com.example.welovebasket.fragments.FavoriteFoodFragment"
         android:label="fragment_favorite_food"
         tools:layout="@layout/fragment_favorite_food" />
+    <fragment
+        android:id="@+id/searchMainIngredient"
+        android:name="com.example.welovebasket.fragments.searchMainIngredient"
+        android:label="fragment_search_main_ingredient"
+        tools:layout="@layout/fragment_search_main_ingredient" />
 </navigation>

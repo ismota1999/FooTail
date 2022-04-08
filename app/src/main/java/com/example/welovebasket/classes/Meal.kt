@@ -1,10 +1,14 @@
 package com.example.welovebasket.classes
 
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
+@Entity(tableName = "mealInfo")
 data class Meal(
     val dateModified: Any?,
+    @PrimaryKey
     val idMeal: String,
     val strArea: String?,
     val strCategory: String?,

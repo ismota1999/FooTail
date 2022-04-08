@@ -7,10 +7,11 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.welovebasket.classes.Drink
+import com.example.welovebasket.classes.Meal
 import com.example.welovebasket.databinding.FavDrinkCardBinding
 
 class FavDrinksAdapter : RecyclerView.Adapter<FavDrinksAdapter.FavDrinksAdapterViewHolder>() {
-    private var favoriteDrinks: List<Drink> = ArrayList()
+
     private lateinit var onFavoriteClickListener: OnFavoriteClickListener
 
     inner class FavDrinksAdapterViewHolder(val binding : FavDrinkCardBinding) : RecyclerView.ViewHolder(binding.root)
@@ -31,10 +32,6 @@ class FavDrinksAdapter : RecyclerView.Adapter<FavDrinksAdapter.FavDrinksAdapterV
         return FavDrinksAdapterViewHolder(
             FavDrinkCardBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         )
-    }
-
-    fun getDrinkByPosition(position: Int):Drink{
-        return differ.currentList[position]
     }
 
     fun setOnFavoriteDrinkListener(onFavoriteClickListener: OnFavoriteClickListener) {

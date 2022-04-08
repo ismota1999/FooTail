@@ -3,9 +3,8 @@ package com.example.welovebasket.roomDB
 import androidx.room.TypeConverter
 import androidx.room.TypeConverters
 
-
 @TypeConverters
-class drinkTypeConverter {
+class foodTypeConverter {
 
     @TypeConverter
     fun fromAnytoString(attribute:Any?) : String{

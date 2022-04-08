@@ -13,10 +13,17 @@
         <entry key="..\:/Users/ismot/AndroidStudioProjects/WeLoveBasket/app/src/main/res/menu/aa.xml" value="0.33177083333333335" />
         <entry key="..\:/Users/ismot/AndroidStudioProjects/WeLoveBasket/app/src/main/res/menu/bottom_nevigation.xml" value="0.33177083333333335" />
         <entry key="..\:/Users/ismot/AppData/Local/Android/Sdk/platforms/android-32/data/res/layout/simple_list_item_1.xml" value="0.3359375" />
+        <entry key="..\:/Users/ismot/OneDrive/Desktop/cocktailApp/app/src/main/res/drawable/ic_baseline_category_main.xml" value="0.2785" />
+        <entry key="..\:/Users/ismot/OneDrive/Desktop/cocktailApp/app/src/main/res/drawable/ic_baseline_check_24.xml" value="0.2785" />
+        <entry key="..\:/Users/ismot/OneDrive/Desktop/cocktailApp/app/src/main/res/drawable/ic_baseline_favorite_border_24.xml" value="0.2785" />
         <entry key="..\:/Users/ismot/OneDrive/Desktop/cocktailApp/app/src/main/res/drawable/ic_home.xml" value="0.307" />
         <entry key="..\:/Users/ismot/OneDrive/Desktop/cocktailApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.307" />
+        <entry key="..\:/Users/ismot/OneDrive/Desktop/cocktailApp/app/src/main/res/drawable/search_box_background.xml" value="0.2785" />
+        <entry key="..\:/Users/ismot/OneDrive/Desktop/cocktailApp/app/src/main/res/layout-land/activity_drink_details.xml" value="0.3026041666666667" />
+        <entry key="..\:/Users/ismot/OneDrive/Desktop/cocktailApp/app/src/main/res/layout-land/activity_food.xml" value="0.3026041666666667" />
         <entry key="..\:/Users/ismot/OneDrive/Desktop/cocktailApp/app/src/main/res/layout/activity_drink_details.xml" value="0.33" />
         <entry key="..\:/Users/ismot/OneDrive/Desktop/cocktailApp/app/src/main/res/layout/activity_food.xml" value="0.3359375" />
+        <entry key="..\:/Users/ismot/OneDrive/Desktop/cocktailApp/app/src/main/res/layout/activity_food_details.xml" value="0.33" />
         <entry key="..\:/Users/ismot/OneDrive/Desktop/cocktailApp/app/src/main/res/layout/activity_main.xml" value="0.3359375" />
         <entry key="..\:/Users/ismot/OneDrive/Desktop/cocktailApp/app/src/main/res/layout/activity_menu.xml" value="0.33" />
         <entry key="..\:/Users/ismot/OneDrive/Desktop/cocktailApp/app/src/main/res/layout/activity_splash_screen.xml" value="0.3359375" />
@@ -28,10 +35,14 @@
         <entry key="..\:/Users/ismot/OneDrive/Desktop/cocktailApp/app/src/main/res/layout/fragment_drinks_made.xml" value="0.3359375" />
         <entry key="..\:/Users/ismot/OneDrive/Desktop/cocktailApp/app/src/main/res/layout/fragment_favorite_food.xml" value="0.15729166666666666" />
         <entry key="..\:/Users/ismot/OneDrive/Desktop/cocktailApp/app/src/main/res/layout/fragment_favorites.xml" value="0.33" />
-        <entry key="..\:/Users/ismot/OneDrive/Desktop/cocktailApp/app/src/main/res/layout/fragment_food_home.xml" value="0.15729166666666666" />
+        <entry key="..\:/Users/ismot/OneDrive/Desktop/cocktailApp/app/src/main/res/layout/fragment_food_home.xml" value="0.33" />
         <entry key="..\:/Users/ismot/OneDrive/Desktop/cocktailApp/app/src/main/res/layout/fragment_home.xml" value="0.3359375" />
+        <entry key="..\:/Users/ismot/OneDrive/Desktop/cocktailApp/app/src/main/res/layout/fragment_search_cocktail.xml" value="0.3359375" />
+        <entry key="..\:/Users/ismot/OneDrive/Desktop/cocktailApp/app/src/main/res/layout/fragment_search_main_ingredient.xml" value="0.33" />
         <entry key="..\:/Users/ismot/OneDrive/Desktop/cocktailApp/app/src/main/res/layout/popular_items.xml" value="0.3359375" />
+        <entry key="..\:/Users/ismot/OneDrive/Desktop/cocktailApp/app/src/main/res/menu/bottom_food_navigation.xml" value="0.33" />
         <entry key="..\:/Users/ismot/OneDrive/Desktop/cocktailApp/app/src/main/res/menu/bottom_food_nevigation.xml" value="0.15729166666666666" />
+        <entry key="..\:/Users/ismot/OneDrive/Desktop/cocktailApp/app/src/main/res/menu/bottom_navigation.xml" value="0.3359375" />
         <entry key="..\:/Users/ismot/OneDrive/Desktop/cocktailApp/app/src/main/res/menu/bottom_nevigation.xml" value="0.3359375" />
       </map>
     </option>

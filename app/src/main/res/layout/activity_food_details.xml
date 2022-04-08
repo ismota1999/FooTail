@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/main_app"
-    tools:context=".activities.DrinkDetails">
+    tools:context=".activities.FoodDetails">
 
 
     <com.google.android.material.appbar.AppBarLayout
@@ -19,7 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fitsSystemWindows="true"
-            app:contentScrim="@color/stauts_bar"
+            app:contentScrim="@color/purple_500"
             app:layout_scrollFlags="scroll|snap|exitUntilCollapsed"
             app:title="Cocktail name">
 
@@ -72,20 +72,20 @@
                     android:fontFamily="@font/myfont"
                     android:drawableLeft="@drawable/ic_category"
                     android:drawableTint="@color/black"
-                    android:text="Category : Ordinary Drink"
+                    android:text="Category : Placeholder"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_9sdp"
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/glassType"
+                    android:id="@+id/meal_area"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:fontFamily="@font/myfont"
-                    android:drawableLeft="@drawable/ic_baseline_local_drink_24"
+                    android:drawableLeft="@drawable/ic_baseline_location_on_24"
                     android:drawableTint="@color/black"
-                    android:text="Glass : Cocktail glass"
+                    android:text="Area : Placeholder"
                     android:textColor="@color/black"
                     android:paddingRight="@dimen/_20sdp"
                     android:textSize="@dimen/_9sdp"
@@ -111,7 +111,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_2sdp"
-                android:textSize="@dimen/_10sdp"
+                android:textSize="@dimen/_9sdp"
                 android:layout_marginRight="@dimen/_20sdp"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toStartOf="@id/howTo_text"
@@ -161,7 +161,7 @@
 
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/btn_save"
+        android:id="@+id/btn_save_meal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginRight="15dp"

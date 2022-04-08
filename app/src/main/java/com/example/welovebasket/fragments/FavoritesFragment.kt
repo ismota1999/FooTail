@@ -68,11 +68,11 @@ class FavoritesFragment : Fragment() {
 
     private fun prepareRecyclerView() {
         favDrinksAdapter = FavDrinksAdapter()
-        binding.rvFavorites.apply {
-            layoutManager = GridLayoutManager(context, 2, GridLayoutManager.VERTICAL, false)
-            adapter = favDrinksAdapter
+            binding.rvFavorites.apply {
+                layoutManager = GridLayoutManager(context, 2, GridLayoutManager.VERTICAL, false)
+                adapter = favDrinksAdapter
+            }
         }
-    }
 
     private fun observerFavs() {
         viewModel.observeFavDrinkLiveData().observe(viewLifecycleOwner, Observer { drinks->

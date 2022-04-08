@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/main_app"
     tools:context=".activities.FoodActivity">
 
     <!-- TODO: Update blank fragment layout -->
@@ -36,9 +37,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="3"
-                    android:fontFamily="@font/myfont"
-                    android:text="Food Generator"
-                    android:textColor="@color/purple_500"
+                    android:fontFamily="@font/metalsmithregp7"
+                    android:text="Meal Generator"
+                    android:textColor="#4E4740"
                     android:textSize="@dimen/_25ssp"
                     android:textStyle="bold" />
 
@@ -53,7 +54,7 @@
                 android:fontFamily="@font/myfont"
                 android:text="Welcome!"
                 android:textColor="@color/black"
-                android:textSize="@dimen/_12sdp"
+                android:textSize="@dimen/_14sdp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="@id/linear_head"
                 app:layout_constraintTop_toBottomOf="@id/linear_head" />
@@ -75,7 +76,7 @@
                     android:id="@+id/img_random_cocktail"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@color/purple_500"
+                    android:background="@color/main_app"
                     android:scaleType="centerCrop" />
 
             </androidx.cardview.widget.CardView>
@@ -83,25 +84,27 @@
 
             <TextView
                 android:id="@+id/drinkName"
-                android:layout_width="143dp"
-                android:layout_height="38dp"
+                android:layout_width="230dp"
+                android:layout_height="109dp"
+                android:fontFamily="@font/myfont"
                 android:gravity="center_horizontal|center_vertical"
                 android:text=""
-                android:textStyle="bold"
-                android:fontFamily="@font/myfont"
-                android:textSize="@dimen/_8ssp"
                 android:textColor="@color/black"
+                android:textSize="@dimen/_14ssp"
+                android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.539" />
+                app:layout_constraintVertical_bias="0.588" />
 
             <Button
                 android:id="@+id/generateDrink"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Generate"
+                android:backgroundTint="#4E4740"
+                android:text="Give me a meal!"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.498"

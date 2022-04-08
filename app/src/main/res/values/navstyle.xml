@@ -1,0 +1,8 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="BottomNavigationTheme" parent="Theme.AppCompat.Light">
+        <item name="colorPrimary">@color/stauts_bar</item>
+        <item name="android:colorForeground">@color/main_app</item>
+        <item name="android:background">@color/stauts_bar</item>
+    </style>
+</resources>

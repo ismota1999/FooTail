@@ -66,19 +66,15 @@ class DrinkDetails : AppCompatActivity() {
             val drink = t
             drinkSaved = drink
 
-            binding.category.text = "Category : ${drink!!.strCategory}"
-            binding.glassType.text = "Glass : ${drink!!.strGlass}"
+            binding.category.text = "Category : ${drink.strCategory?:"N/A"}"
+            binding.glassType.text = "Glass : ${drink.strGlass?:"N/A"}"
             binding.instructions.text = drink.strInstructions
 
-            val ingredient = drink.getIngredients()
-
-            listView = findViewById<ListView>(R.id.listView)
-            val listItems = arrayOfNulls<String>(ingredient.size)
-
-            for (i in 0 until ingredient.size) {
-                val recipe = ingredient[i]
-                listItems[i] = "-" + recipe.ingredient + " -> " +  recipe.measure
+            val listItems = drink.getIngredients().map {
+                "-" + it.ingredient + " -> " +  (it.measure?:"N/A")
             }
+            listView = findViewById(R.id.listView)
+
 
             val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, listItems)
             listView.adapter = adapter
@@ -98,9 +94,9 @@ class DrinkDetails : AppCompatActivity() {
 
     private fun getDrinkInfoFromIntent() {
         val intent = intent
-        drinkId = intent.getStringExtra(HomeFragment.DRINK_ID)!!
-        drinkName = intent.getStringExtra(HomeFragment.DRINK_NAME)!!
-        drinkImg = intent.getStringExtra(HomeFragment.DRINK_THUMB)!!
+        drinkId = intent.getStringExtra(HomeFragment.DRINK_ID)?:"N/A"
+        drinkName = intent.getStringExtra(HomeFragment.DRINK_NAME)?:"N/A"
+        drinkImg = intent.getStringExtra(HomeFragment.DRINK_THUMB)?:"N/A  "
 
     }
 
